@@ -138,13 +138,6 @@ const char* get_temperature_callback(int n_args, property_t *args) {
 }
 ```
 
-## Documentation
-
-For detailed information about the SDK, please refer to the following documentation:
-
-- **[API Reference](docs/en/api-reference.md)** - Complete API documentation with examples
-- **[Configuration Guide](docs/en/configuration.md)** - Detailed configuration options and settings
-
 ## Protocol Specification
 
 This SDK implements the [MCP over MQTT protocol specification](https://github.com/mqtt-ai/mcp-over-mqtt), supporting:
