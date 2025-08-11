@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "esp_log.h"
+
 #include "mcp.h"
 #include "mcp_server.h"
 
