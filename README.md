@@ -16,7 +16,7 @@ An implementation of Model Context Protocol (MCP) over MQTT 5.0 for ESP32 platfo
 MCP defines clear interfaces and protocols, enabling AI assistants to safely extend their capabilities while maintaining control over data access.
 
 ## Why MCP over MQTT?
-
+![](docs/esp-tools.png)
 MQTT is a lightweight messaging protocol designed for IoT and edge computing. Combining MCP with MQTT brings the following advantages:
 
 ### Core Features
