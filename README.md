@@ -138,63 +138,12 @@ const char* get_temperature_callback(int n_args, property_t *args) {
 }
 ```
 
-## API Reference
+## Documentation
 
-### Main Functions
+For detailed information about the SDK, please refer to the following documentation:
 
-#### `mcp_server_init()`
-Initialize MCP server instance
-```c
-mcp_server_t *mcp_server_init(
-    const char *name,           // Server name
-    const char *description,    // Server description
-    const char *broker_uri,     // MQTT Broker URI
-    const char *client_id,      // Client ID
-    const char *user,           // Username
-    const char *password,       // Password
-    const char *cert            // Certificate
-);
-```
-
-#### `mcp_server_register_tool()`
-Register MCP tools
-```c
-int mcp_server_register_tool(
-    mcp_server_t *server,       // Server instance
-    int n_tools,                // Number of tools
-    mcp_tool_t *tools           // Tool array
-);
-```
-
-#### `mcp_server_register_resources()`
-Register MCP resources
-```c
-int mcp_server_register_resources(
-    mcp_server_t *server,       // Server instance
-    int n_resources,            // Number of resources
-    mcp_resource_t *resources,  // Resource array
-    mcp_resource_read read_callback // Read callback function
-);
-```
-
-#### `mcp_server_run()`
-Start MCP server
-```c
-int mcp_server_run(mcp_server_t *server);
-```
-
-## Configuration
-
-### MQTT Topic Structure
-- **Control Topic**: `$mcp-server/{client_id}/{server_name}`
-- **Presence Topic**: `$mcp-server/presence/{client_id}/{server_name}`
-- **Capability Topic**: `$mcp-server/capability/{client_id}/{server_name}`
-
-### Connection Parameters
-- **Keepalive**: 10 seconds
-- **Protocol Version**: MQTT 5.0
-- **Buffer Size**: 81920 bytes
-- **Last Will**: Automatically publish offline status
+- **[API Reference](docs/en/api-reference.md)** - Complete API documentation with examples
+- **[Configuration Guide](docs/en/configuration.md)** - Detailed configuration options and settings
 
 ## Protocol Specification
 
@@ -204,15 +153,6 @@ This SDK implements the [MCP over MQTT protocol specification](https://github.co
 - **Load Balancing**: Support for multi-instance deployment
 - **State Management**: Maintain MCP server state
 - **Access Control**: Permission control based on MQTT topics
-
-## Contributing
-
-We welcome Issue submissions and Pull Requests! Before contributing code, please ensure:
-
-1. Code follows ESP-IDF coding standards
-2. Add appropriate test cases
-3. Update relevant documentation
-4. Follow MCP over MQTT protocol specification
 
 ## License
 
@@ -224,18 +164,4 @@ This project is licensed under the [LICENSE](LICENSE) license.
 - [MCP over MQTT Specification](https://github.com/mqtt-ai/mcp-over-mqtt)
 - [ESP-IDF Documentation](https://docs.espressif.com/projects/esp-idf/)
 - [MQTT Protocol Specification](https://mqtt.org/specification/)
-
-## Support
-
-If you encounter issues during use, please:
-
-1. Check the [Issues](../../issues) page
-2. Submit a new Issue describing the problem
-3. Refer to MCP over MQTT protocol specification
-4. Check ESP-IDF version compatibility
-
----
-
-**Note**: This is an experimental implementation. It is recommended to thoroughly test before using in production environments.
-
-[MCP over MQTT Python SDK](https://github.com/emqx/mcp-python-sdk) 
+- [MCP over MQTT Python SDK](https://github.com/emqx/mcp-python-sdk) 

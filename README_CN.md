@@ -138,63 +138,12 @@ const char* get_temperature_callback(int n_args, property_t *args) {
 }
 ```
 
-## API 参考
+## 文档
 
-### 主要函数
+有关 SDK 的详细信息，请参考以下文档：
 
-#### `mcp_server_init()`
-初始化 MCP 服务器实例
-```c
-mcp_server_t *mcp_server_init(
-    const char *name,           // 服务器名称
-    const char *description,    // 服务器描述
-    const char *broker_uri,     // MQTT Broker URI
-    const char *client_id,      // 客户端 ID
-    const char *user,           // 用户名
-    const char *password,       // 密码
-    const char *cert            // 证书
-);
-```
-
-#### `mcp_server_register_tool()`
-注册 MCP 工具
-```c
-int mcp_server_register_tool(
-    mcp_server_t *server,       // 服务器实例
-    int n_tools,                // 工具数量
-    mcp_tool_t *tools           // 工具数组
-);
-```
-
-#### `mcp_server_register_resources()`
-注册 MCP 资源
-```c
-int mcp_server_register_resources(
-    mcp_server_t *server,       // 服务器实例
-    int n_resources,            // 资源数量
-    mcp_resource_t *resources,  // 资源数组
-    mcp_resource_read read_callback // 读取回调函数
-);
-```
-
-#### `mcp_server_run()`
-启动 MCP 服务器
-```c
-int mcp_server_run(mcp_server_t *server);
-```
-
-## 配置说明
-
-### MQTT 主题结构
-- **控制主题**: `$mcp-server/{client_id}/{server_name}`
-- **存在主题**: `$mcp-server/presence/{client_id}/{server_name}`
-- **能力主题**: `$mcp-server/capability/{client_id}/{server_name}`
-
-### 连接参数
-- **Keepalive**: 10 秒
-- **协议版本**: MQTT 5.0
-- **缓冲区大小**: 81920 字节
-- **最后遗嘱**: 自动发布离线状态
+- **[API 参考](docs/zh/api-reference.md)** - 完整的 API 文档和示例
+- **[配置指南](docs/zh/configuration.md)** - 详细的配置选项和设置
 
 ## 协议规范
 
@@ -204,15 +153,6 @@ int mcp_server_run(mcp_server_t *server);
 - **负载均衡**: 支持多实例部署
 - **状态管理**: 保持 MCP 服务器状态
 - **权限控制**: 基于 MQTT 主题的访问控制
-
-## 贡献指南
-
-欢迎提交 Issue 和 Pull Request！在贡献代码前，请确保：
-
-1. 代码符合 ESP-IDF 编码规范
-2. 添加适当的测试用例
-3. 更新相关文档
-4. 遵循 MCP over MQTT 协议规范
 
 ## 许可证
 
@@ -224,16 +164,4 @@ int mcp_server_run(mcp_server_t *server);
 - [MCP over MQTT 规范](https://github.com/mqtt-ai/mcp-over-mqtt)
 - [ESP-IDF 文档](https://docs.espressif.com/projects/esp-idf/)
 - [MQTT 协议规范](https://mqtt.org/specification/)
-
-## 支持
-
-如果你在使用过程中遇到问题，请：
-
-1. 查看 [Issues](../../issues) 页面
-2. 提交新的 Issue 描述问题
-3. 参考 MCP over MQTT 协议规范
-4. 检查 ESP-IDF 版本兼容性
-
----
-
-[MCP over MQTT Python SDK](https://github.com/emqx/mcp-python-sdk)
+- [MCP over MQTT Python SDK](https://github.com/emqx/mcp-python-sdk)
