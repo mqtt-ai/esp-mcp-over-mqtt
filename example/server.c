@@ -21,7 +21,6 @@ const char *set_volume(int n_args, property_t *args)
     }
 
 	// Set the volume on the device
-
     ESP_LOGI("mcp server", "Setting volume to: %d%%", volume);
     return "Volume set successfully";
 }
